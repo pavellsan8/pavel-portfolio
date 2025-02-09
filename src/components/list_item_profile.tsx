@@ -9,7 +9,7 @@ interface ListItemProps {
 const ListItem: React.FC<ListItemProps> = ({ Icon, value, isLink = false }) => {
   return (
     <li className="flex items-center">
-      <div className="w-10 h-10 flex items-center justify-center bg-custom-blue_6 rounded-full mr-4">
+      <div className="w-10 h-10 flex items-center justify-center bg-custom-color_5 rounded-full mr-4 flex-shrink-0">
         <Icon className="w-6 h-6 text-white" />
       </div>
       {isLink ? (
@@ -20,7 +20,7 @@ const ListItem: React.FC<ListItemProps> = ({ Icon, value, isLink = false }) => {
           {value}
         </a>
       ) : (
-        <span className="ml-1">{value}</span>
+        <span className="w-100 flex ml-1">{value}</span>
       )}
     </li>
   );

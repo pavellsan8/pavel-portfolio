@@ -23,3 +23,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.navbar {
+  backdrop-filter: blur(10px);
+  background: rgba(30, 30, 30, 0.8);
+}

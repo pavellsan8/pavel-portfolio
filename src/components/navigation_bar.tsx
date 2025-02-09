@@ -23,7 +23,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-custom-blue_3 text-white shadow-lg fixed top-0 w-full z-50">
+    <nav className="navbar bg-custom-color_2 text-white shadow-lg fixed top-0 w-full z-50">
       <div className="container mx-auto flex items-center justify-between p-4">
         <div className="text-xl font-bold">
           <a href="/" onClick={(e) => handleClick(e)}>MyApp</a>
@@ -43,6 +43,13 @@ export default function Navbar() {
             onClick={(e) => handleClick(e, 'about')}
           >
             About
+          </a>
+          <a 
+            href="/#resume" 
+            className="hover:text-gray-300 transition duration-300"
+            onClick={(e) => handleClick(e, 'resume')}
+          >
+            Resume
           </a>
           <a 
             href="/#services" 
@@ -68,7 +75,7 @@ export default function Navbar() {
       </div>
 
       <div 
-        className={`md:hidden bg-gray-700 absolute top-full left-0 w-full shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden bg-custom-color_3 absolute top-full left-0 w-full shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'max-h-64' : 'max-h-0'
         }`}
       >

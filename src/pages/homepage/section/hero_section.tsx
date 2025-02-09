@@ -24,14 +24,14 @@ export default function HeroSection() {
     <>
       <section id="hero" className="w-full h-screen flex flex-col md:flex-row items-center justify-center p-8 md:p-32 relative z-10">
         <div className="flex-1 h-full flex flex-col justify-center items-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white-800">
+          <h1 className="text-4xl md:text-5xl font-bold text-white-800 text-center">
             <span ref={el}></span>
           </h1>
           <p className="text-lg md:text-xl text-white-600 text-center">
             Discover my career journey, skills, and completed projects here!
           </p>
           <a href="#about">
-            <button className="mt-4 px-6 py-2 bg-custom-blue_6 text-white text-lg rounded-lg hover:bg-custom-blue_5 transition duration-200 ease-in-out">
+            <button className="mt-4 px-6 py-2 bg-custom-color_5 text-white text-lg rounded-lg hover:bg-custom-color_4 transition duration-200 ease-in-out">
               Get Started
             </button>
           </a>
