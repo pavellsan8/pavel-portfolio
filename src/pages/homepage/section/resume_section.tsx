@@ -5,7 +5,7 @@ import { experiences } from "../../../data/homepage";
 export default function ResumeSection() {
   return (
     <>
-      <section id="resume" className="bg-custom-color_1 px-6 pb-14 md:px-14">
+      <section id="resume" className="bg-custom-color_1 px-6 pt-14 md:px-14">
         <div className="p-4 md:p-3">
           <div className="w-full mx-auto">
             <h1 className="text-3xl font-bold text-white my-4">Resume</h1>

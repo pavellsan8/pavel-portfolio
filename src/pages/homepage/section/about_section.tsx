@@ -17,7 +17,7 @@ export default function AboutSection() {
             </header>
 
             <p className="text-gray-300 leading-relaxed"> 
-              I specialize in designing and building applications across mobile and web platforms, with a focus on functionality, performance, and user satisfaction. 
+              I specialize in designing and building applications across web and mobile platforms, with a focus on functionality, performance, and user satisfaction. 
               I am passionate about the end-to-end development process conceptualizing ideas, writing clean code, and deploying finished products while ensuring 
               the highest standards of usability, scalability, and innovation.
             </p>
@@ -35,7 +35,7 @@ export default function AboutSection() {
 
               <div className="w-full md:w-1/2 text-gray-300 my-10">
                 <h2 className="text-2xl font-semibold mb-4 text-custom-color_6">
-                  Mobile Application Developer and Web Developer
+                  Web Developer and Mobile Application Developer 
                 </h2>
                 <ul className="space-y-4">
                   <ListItem Icon={MapPin} value="West Jakarta, Indonesia" />

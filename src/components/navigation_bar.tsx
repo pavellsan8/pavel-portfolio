@@ -52,11 +52,11 @@ export default function Navbar() {
             Resume
           </a>
           <a 
-            href="/#services" 
+            href="/#projects" 
             className="hover:text-gray-300 transition duration-300"
-            onClick={(e) => handleClick(e, 'services')}
+            onClick={(e) => handleClick(e, 'projects')}
           >
-            Services
+            Projects
           </a>
           <a 
             href="/#contact" 
@@ -95,11 +95,11 @@ export default function Navbar() {
             About
           </a>
           <a
-            href="/#services"
+            href="/#projects"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
-            onClick={(e) => handleClick(e, 'services')}
+            onClick={(e) => handleClick(e, 'projects')}
           >
-            Services
+            Projects
           </a>
           <a
             href="/#contact"

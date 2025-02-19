@@ -19,12 +19,11 @@ export const softSkills = [
 ]
 
 export const projects = [
-  { title: "Your Innovation", description: "Django, Bootstrap, PostgreSQL, OpenAI" },
-  { title: "MES Dashboard", description: "Django, Tailwind CSS, Flask, Oracle SQL" },
+  { title: "Japfa Innovation", description: "Django, Bootstrap, PostgreSQL, OpenAI" },
+  { title: "IMEXS Dashboard", description: "Django, Tailwind CSS, Flask, Oracle SQL" },
 ]
 
-export const experiences = 
-[
+export const experiences = [
   {
     section : "Education",
     details : [
@@ -55,5 +54,26 @@ export const experiences =
         ],  
       },
     ]
+  },
+];
+
+export const projectCard = [
+  {
+    title: "Japfa Innovation",
+    description: "This is a description of project 1.",
+    image: "/images/project/project_1/japfa_inno_1.jpg",
+    link: "https://example.com/project1",
+  },
+  {
+    title: "IMEXS Dashboard",
+    description: "This is a description of project 2.",
+    image: "/images/project/project_2/mes_report_1.jpg",
+    link: "https://example.com/project2",
+  },
+  {
+    title: "SleepEz",
+    description: "This is a description of project 3.",
+    image: "/images/project/project_3/sleep_ez_1.jpg",
+    link: "https://example.com/project3",
   },
 ];
