@@ -12,15 +12,33 @@ export const hardSkills = [
 ];
 
 export const softSkills = [
-  { title: "Problem Solving", description: "Strong analytical and debugging skills" },
-  { title: "Time Management", description: "Efficient project planning and delivery" },
-  { title: "Team Collaboration", description: "Experience in agile development teams" },
-  { title: "Adaptability", description: "Easily adapt to project requirements" },
+  { 
+    title: "Problem Solving", 
+    description: "Strong analytical and debugging skills", 
+  },
+  { 
+    title: "Time Management", 
+    description: "Efficient project planning and delivery", 
+  },
+  { 
+    title: "Team Collaboration", 
+    description: "Experience in agile development teams",
+  },
+  { 
+    title: "Adaptability", 
+    description: "Easily adapt to project requirements", 
+  },
 ]
 
 export const projects = [
-  { title: "Japfa Innovation", description: "Django, Bootstrap, PostgreSQL, OpenAI" },
-  { title: "IMEXS Dashboard", description: "Django, Tailwind CSS, Flask, Oracle SQL" },
+  { 
+    title: "Japfa Innovation", 
+    description: "Django, Bootstrap, PostgreSQL, OpenAI" 
+  },
+  { 
+    title: "IMEXS Dashboard", 
+    description: "Django, Tailwind CSS, Flask, Oracle SQL" 
+  },
 ]
 
 export const experiences = [
@@ -59,20 +77,23 @@ export const experiences = [
 
 export const projectCard = [
   {
+    id: 1,
     title: "Japfa Innovation",
-    description: "This is a description of project 1.",
+    description: "Japfa Innovation is a content publishing platform designed for employees to document and share innovations developed within the company. The platform allows users to create articles using predefined templates, customize content, and publish innovations for company-wide visibility.",
     image: "/images/project/project_1/japfa_inno_1.jpg",
     link: "https://example.com/project1",
   },
   {
+    id: 2,
     title: "IMEXS Dashboard",
-    description: "This is a description of project 2.",
+    description: "IMEXS Dashboard is a real-time production monitoring system that provides a comprehensive view of the entire production process. This dashboard aggregates data from various stages of production, including process orders, stations, and process IDs, enabling better visibility and decision-making.",
     image: "/images/project/project_2/mes_report_1.jpg",
     link: "https://example.com/project2",
   },
   {
+    id: 3,
     title: "SleepEz",
-    description: "This is a description of project 3.",
+    description: "SleepEz is a web-based application designed to help users improve their sleep quality through a combination of relaxation techniques and informative content. The platform provides features such as calming music, guided sleep videos, and curated articles containing tips and tricks for better sleep.",
     image: "/images/project/project_3/sleep_ez_1.jpg",
     link: "https://example.com/project3",
   },

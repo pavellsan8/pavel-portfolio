@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -11,24 +13,42 @@ export default function Navbar() {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id?: string) => {
     e.preventDefault();
     setIsOpen(false);
-    if (id) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+
+    if (router.pathname !== '/') {
+      router.push('/');
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        if (id) {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 100);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
-    history.replaceState(null, "", id ? `/#${id}` : "/");
+    
+    // Update URL without hash
+    if (id) {
+      router.push(`/${id}`, undefined, { shallow: true });
+    } else {
+      router.push('/', undefined, { shallow: true });
+    }
   };
 
   return (
     <nav className="navbar bg-custom-color_2 text-white shadow-lg fixed top-0 w-full z-50">
-      <div className="container mx-auto flex items-center justify-between p-4">
-        <div className="text-xl font-bold">
-          <a href="/" onClick={(e) => handleClick(e)}>MyApp</a>
-        </div>
-
+      <div className="container mx-auto flex items-center justify-between p-7">
         <div className="hidden md:flex space-x-16 absolute left-1/2 transform -translate-x-1/2">
           <a 
             href="/" 
@@ -38,28 +58,28 @@ export default function Navbar() {
             Home
           </a>
           <a 
-            href="/#about" 
+            href="/about" 
             className="hover:text-gray-300 transition duration-300"
             onClick={(e) => handleClick(e, 'about')}
           >
             About
           </a>
           <a 
-            href="/#resume" 
+            href="/resume" 
             className="hover:text-gray-300 transition duration-300"
             onClick={(e) => handleClick(e, 'resume')}
           >
             Resume
           </a>
           <a 
-            href="/#projects" 
+            href="/projects" 
             className="hover:text-gray-300 transition duration-300"
             onClick={(e) => handleClick(e, 'projects')}
           >
             Projects
           </a>
           <a 
-            href="/#contact" 
+            href="/contact" 
             className="hover:text-gray-300 transition duration-300"
             onClick={(e) => handleClick(e, 'contact')}
           >
@@ -80,29 +100,29 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col p-4 space-y-4">
-          <a
-            href="/"
+          
+          <a href="/"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e)}
           >
             Home
           </a>
-          <a
-            href="/#about"
+          
+          <a href="/about"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e, 'about')}
           >
             About
           </a>
-          <a
-            href="/#projects"
+          
+          <a href="/projects"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e, 'projects')}
           >
             Projects
           </a>
-          <a
-            href="/#contact"
+          
+          <a href="/contact"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e, 'contact')}
           >

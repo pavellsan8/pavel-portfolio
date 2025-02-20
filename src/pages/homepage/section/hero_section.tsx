@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Typed from "typed.js";
 
 export default function HeroSection() {
@@ -30,11 +31,11 @@ export default function HeroSection() {
           <p className="text-lg md:text-xl text-white-600 text-center">
             Discover my career journey, skills, and completed projects here!
           </p>
-          <a href="#about">
+          <Link href="/about">
             <button className="mt-4 px-6 py-2 bg-custom-color_5 text-white text-lg rounded-lg hover:bg-custom-color_4 transition duration-200 ease-in-out">
               Get Started
             </button>
-          </a>
+          </Link>
         </div>
       </section>
       

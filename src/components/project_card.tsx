@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import Link from "next/link";
 import { useState } from 'react';
 
 interface ProjectCardProps {
+  id: number,
   title: string;
   description: string;
   image: string;
@@ -9,10 +11,10 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({
+    id,
     title,
     description,
     image,
-    link,
   }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -27,7 +29,7 @@ export default function ProjectCard({
           <Image 
             src={image} 
             alt={title} 
-            className={`absolute w-full h-[4z00px] object-cover transition-transform duration-[0.7s] ease-linear ${
+            className={`absolute w-full h-[400px] object-cover transition-transform duration-[0.7s] ease-linear ${
               isHovered ? 'translate-y-[-200px]' : 'translate-y-0'
             }`}
             width={400} 
@@ -37,15 +39,18 @@ export default function ProjectCard({
         </div>
       </div>
       <h3 className="text-xl font-semibold mt-4">{title}</h3>
-      <p className="text-gray-300 mt-2">{description}</p>
-      <a 
+      <p className="text-gray-300 text-sm mt-2">{description}</p>
+      <Link href={`/project/detail/${id}`} passHref>
+        <button className="mt-3 bg-blue-500 text-white px-4 py-2 rounded-md">View Project →</button>
+      </Link>
+      {/* <a 
         href={link} 
         target="_blank" 
         rel="noopener noreferrer" 
         className="text-blue-500 mt-4 inline-block hover:underline"
       >
         View Project →
-      </a>
+      </a> */}
     </div>
   );
 }

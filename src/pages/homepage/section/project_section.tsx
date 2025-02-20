@@ -18,6 +18,7 @@ export default function ProjectSection() {
               {projectCard.map((project, index) => (
                 <ProjectCard 
                   key={index}
+                  id={project.id}
                   title={project.title}
                   description={project.description}
                   image={project.image}
