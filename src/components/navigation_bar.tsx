@@ -16,7 +16,6 @@ export default function Navbar() {
 
     if (router.pathname !== '/') {
       router.push('/');
-      // Wait for navigation to complete before scrolling
       setTimeout(() => {
         if (id) {
           const element = document.getElementById(id);
@@ -38,7 +37,6 @@ export default function Navbar() {
       }
     }
     
-    // Update URL without hash
     if (id) {
       router.push(`/${id}`, undefined, { shallow: true });
     } else {
@@ -48,7 +46,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar bg-custom-color_2 text-white shadow-lg fixed top-0 w-full z-50">
-      <div className="container mx-auto flex items-center justify-between p-7">
+      <div className="container mx-auto flex items-center justify-end p-5 md:p-7">
         <div className="hidden md:flex space-x-16 absolute left-1/2 transform -translate-x-1/2">
           <a 
             href="/" 
@@ -72,9 +70,9 @@ export default function Navbar() {
             Resume
           </a>
           <a 
-            href="/projects" 
+            href="/project" 
             className="hover:text-gray-300 transition duration-300"
-            onClick={(e) => handleClick(e, 'projects')}
+            onClick={(e) => handleClick(e, 'project')}
           >
             Projects
           </a>
@@ -115,7 +113,7 @@ export default function Navbar() {
             About
           </a>
           
-          <a href="/projects"
+          <a href="/project"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e, 'projects')}
           >

@@ -5,7 +5,7 @@ export const hardSkills = [
   { name: "Django", percentage: 84 },
   { name: "Next.js", percentage: 71 },
   { name: "Git", percentage: 88 },
-  { name: "Bootsrap", percentage: 88 },
+  { name: "Bootstrap", percentage: 88 },
   { name: "Tailwind CSS", percentage: 81 },
   { name: "PosgreSQL", percentage: 86 },
   { name: "Oracle SQL", percentage: 83 },

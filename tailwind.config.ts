@@ -28,7 +28,7 @@ export default {
         },
       },
       animation: {
-        blink: 'blink 2s infinite',
+        blink: 'blink 1.5s infinite',
       },
     },
   },

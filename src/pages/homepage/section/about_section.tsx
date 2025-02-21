@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { Mail, MapPin, GraduationCap, User, Star, Languages, Briefcase, Phone } from "lucide-react";
+import { Mail, MapPin, GraduationCap, User, Star, Languages, Briefcase } from "lucide-react";
 
 import ListItem from "../../../components/list_item_profile";
-import { hardSkills, softSkills, projects, experiences } from "../../../data/homepage";
+import { hardSkills, softSkills, projects } from "../../../data/homepage";
 
 export default function AboutSection() {
   return (
@@ -17,9 +17,10 @@ export default function AboutSection() {
             </header>
 
             <p className="text-gray-300 leading-relaxed"> 
-              I specialize in designing and building applications across web and mobile platforms, with a focus on functionality, performance, and user satisfaction. 
-              I am passionate about the end-to-end development process conceptualizing ideas, writing clean code, and deploying finished products while ensuring 
-              the highest standards of usability, scalability, and innovation.
+            As a dedicated professional in web and mobile application development, I excel in designing and building solutions that prioritize functionality, 
+            performance, and user satisfaction. With a passion for the end-to-end development process, I thrive on conceptualizing ideas, writing clean code, 
+            and deploying polished products. My commitment to excellence ensures the highest standards of usability, scalability, and innovation in every 
+            project I undertake.
             </p>
 
             <div className="flex flex-wrap items-center justify-between mt-6">
@@ -40,7 +41,7 @@ export default function AboutSection() {
                 <ul className="space-y-4">
                   <ListItem Icon={MapPin} value="West Jakarta, Indonesia" />
                   <ListItem Icon={User} value="20 Years Old" />
-                  <ListItem Icon={GraduationCap} value="Undergraduate student in Computer Science @ BINUS University" />
+                  <ListItem Icon={GraduationCap} value="Undergraduate Mobile Application and Technology @ BINUS University" />
                   <ListItem Icon={Mail} value="pavelryan146@gmail.com" isLink />
                 </ul>
                 <p className="mt-4">

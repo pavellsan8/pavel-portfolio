@@ -3,9 +3,8 @@ export default function Footer() {
       <footer className="bg-custom-color_2 text-white py-8">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           <div className="text-center md:text-left">
-            <h2 className="text-xl font-bold">MyApp</h2>
             <p className="text-sm text-gray-400 mt-1">
-              &copy; {new Date().getFullYear()} MyApp. All rights reserved.
+              &copy; {new Date().getFullYear()} Pavellsan All rights reserved.
             </p>
           </div>
     
