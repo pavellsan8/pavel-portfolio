@@ -97,4 +97,25 @@ export const projectCard = [
     image: "/images/project/project_3/sleep_ez_1.jpg",
     link: "https://example.com/project3",
   },
+  {
+    id: 4,
+    title: "Japfa Innovation",
+    description: "Japfa Innovation is a content publishing platform designed for employees to document and share innovations developed within the company. The platform allows users to create articles using predefined templates, customize content, and publish innovations for company-wide visibility.",
+    image: "/images/project/project_1/japfa_inno_1.jpg",
+    link: "https://example.com/project1",
+  },
+  {
+    id: 5,
+    title: "IMEXS Dashboard",
+    description: "IMEXS Dashboard is a real-time production monitoring system that provides a comprehensive view of the entire production process. This dashboard aggregates data from various stages of production, including process orders, stations, and process IDs, enabling better visibility and decision-making.",
+    image: "/images/project/project_2/mes_report_1.jpg",
+    link: "https://example.com/project2",
+  },
+  {
+    id: 6,
+    title: "SleepEz",
+    description: "SleepEz is a web-based application designed to help users improve their sleep quality through a combination of relaxation techniques and informative content. The platform provides features such as calming music, guided sleep videos, and curated articles containing tips and tricks for better sleep.",
+    image: "/images/project/project_3/sleep_ez_1.jpg",
+    link: "https://example.com/project3",
+  },
 ];

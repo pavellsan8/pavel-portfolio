@@ -40,7 +40,7 @@ export default function ProjectCard({
       <h3 className="text-xl font-semibold mt-4">{title}</h3>
       <p className="text-gray-300 text-sm mt-2">{description}</p>
       {/* <Link href={`/pavel-projects/${id}`} className="inline-block mt-3"> */}
-        <button className="bg-custom-color_5 text-white px-4 py-2 rounded-md hover:bg-custom-color_4 hover:shadow-lg transition duration-300">
+        <button className="bg-custom-color_5 text-white px-4 py-2 rounded-md hover:bg-custom-color_4 hover:shadow-lg transition duration-300 mt-5">
           View Project →
         </button>
       {/* </Link> */}
