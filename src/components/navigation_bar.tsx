@@ -45,8 +45,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar bg-custom-color_2 text-white shadow-lg fixed top-0 w-full z-50">
-      <div className="container mx-auto flex items-center justify-end p-5 md:p-7">
+    <nav className="fixed top-0 w-full z-50">
+      <div className="navbar w-full bg-custom-color_2 text-white flex items-center justify-end p-5 md:p-7">
         <div className="hidden md:flex space-x-16 absolute left-1/2 transform -translate-x-1/2">
           <a 
             href="/" 
@@ -93,33 +93,35 @@ export default function Navbar() {
       </div>
 
       <div 
-        className={`md:hidden bg-custom-color_3 absolute top-full left-0 w-full shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`navbar-mobile md:hidden absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'max-h-64' : 'max-h-0'
         }`}
       >
-        <div className="flex flex-col p-4 space-y-4">
-          
+        <div className="flex flex-col p-4 space-y-4 text-center">
           <a href="/"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e)}
           >
             Home
           </a>
-          
           <a href="/about"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e, 'about')}
           >
             About
           </a>
-          
+          <a href="/resume"
+            className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
+            onClick={(e) => handleClick(e, 'resume')}
+          >
+            Resume
+          </a>
           <a href="/project"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e, 'projects')}
           >
             Projects
           </a>
-          
           <a href="/contact"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e, 'contact')}

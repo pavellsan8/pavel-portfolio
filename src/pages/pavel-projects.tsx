@@ -9,14 +9,15 @@ export default function ProjectPage() {
       <h1 className="text-3xl font-bold text-white my-4">All Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectCard.map((project) => (
-          <Link key={project.id} href={`/pavel-projects/${project.id}`}>
-            <ProjectCard 
-              id={project.id}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-            />
-          </Link>
+          // <Link key={project.id} href={`/pavel-projects/${project.id}`}>
+          <ProjectCard 
+            key={project.id}
+            id={project.id}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+          // </Link>
         ))}
       </div>
     </section>

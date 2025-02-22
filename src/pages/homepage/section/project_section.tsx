@@ -7,7 +7,7 @@ import { projectCard } from "@/data/homepage";
 export default function ProjectSection() {
   return (
     <>
-      <section id="project" className="bg-custom-color_1 px-6 py-14 md:px-14">
+      <section id="project" className="bg-custom-color_1 px-6 pt-14 md:px-14">
         <div className="p-4 md:p-3">
           <div className="mx-auto">
             <div className="flex justify-between items-center">
@@ -25,14 +25,13 @@ export default function ProjectSection() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {projectCard.slice(0, 3).map((project) => (
-                <Link href={`/pavel-projects/${project.id}`} key={project.id} className="block">
-                  <ProjectCard 
-                    id={project.id}
-                    title={project.title}
-                    description={project.description}
-                    image={project.image}
-                  />
-                </Link>              
+                <ProjectCard 
+                  key={project.id}
+                  id={project.id}
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                />  
               ))}
             </div>
           </div>

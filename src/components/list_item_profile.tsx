@@ -2,7 +2,7 @@ import React from "react";
 
 interface ListItemProps {
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  value: string;
+  value: React.ReactNode;
   isLink?: boolean;
 }
 

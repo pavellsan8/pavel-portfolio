@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Mail, MapPin, GraduationCap, User, Star, Languages, Briefcase } from "lucide-react";
+import { MapPin, GraduationCap, User, Star, Languages, Briefcase, Lightbulb } from "lucide-react";
 
 import ListItem from "../../../components/list_item_profile";
 import { hardSkills, softSkills, projects } from "../../../data/homepage";
@@ -42,7 +42,7 @@ export default function AboutSection() {
                   <ListItem Icon={MapPin} value="West Jakarta, Indonesia" />
                   <ListItem Icon={User} value="20 Years Old" />
                   <ListItem Icon={GraduationCap} value="Undergraduate Mobile Application and Technology @ BINUS University" />
-                  <ListItem Icon={Mail} value="pavelryan146@gmail.com" isLink />
+                  <ListItem Icon={Lightbulb} value={<i>"Every bug teaches a lesson. The key is to learn faster than you fail."</i>} />
                 </ul>
                 <p className="mt-4">
                   Explore my portfolio to see my work and technical skills in action and also feel free to reach out for inquiries or collaboration opportunities to 
