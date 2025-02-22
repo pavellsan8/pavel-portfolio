@@ -140,7 +140,7 @@ export default function ContactPage() {
             </div>
 
             <div className="p-8 rounded-2xl bg-custom-color_2 shadow-lg">
-              <h2 className="text-2xl font-bold mb-8 text-center text-custom-color_7 bg-clip-text text-transparent">
+              <h2 className="text-2xl font-bold mb-8 text-center text-custom-color_7 bg-clip-text">
                 Connect with Me
               </h2>
               <div className="space-y-4">
