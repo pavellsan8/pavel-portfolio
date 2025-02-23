@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { MapPin, GraduationCap, User, Star, Languages, Briefcase, Lightbulb } from "lucide-react";
 
-import ListItem from "../../../components/list_item_profile";
-import { hardSkills, softSkills, projects } from "../../../data/homepage";
+import ListItem from "../../components/list_item_profile";
+import { hardSkills, softSkills, projects } from "../../data/homepage";
 
 export default function AboutSection() {
   return (

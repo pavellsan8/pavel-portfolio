@@ -2,19 +2,14 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState } from 'react';
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   id: number;
   title: string;
   description: string;
   image: string;
 }
 
-export default function ProjectCard({
-    id,
-    title,
-    description,
-    image,
-  }: ProjectCardProps) {
+export default function ProjectCard({id, title, description, image,}: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -39,12 +34,8 @@ export default function ProjectCard({
       </div>
       <h3 className="text-xl font-semibold mt-4">{title}</h3>
       <p className="text-gray-300 text-sm mt-2">{description}</p>
-      <Link href={`/pavel-projects/${id}`} className="inline-block mt-3" 
-        onClick={(e) => {
-          console.log('Link clicked, navigating to:', `/pavel-projects/${id}`);
-        }}
-        >
-        <button className="bg-custom-color_5 text-white px-4 py-2 rounded-md hover:bg-custom-color_4 hover:shadow-lg transition duration-300 mt-5">
+      <Link href={`/pavel-projects/${id}`}>
+        <button className="bg-custom-color_5 text-white px-4 py-2 rounded-md hover:bg-custom-color_4 hover:shadow-lg transition duration-300 mt-4">
           View Project →
         </button>
       </Link>

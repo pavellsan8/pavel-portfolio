@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,37 +11,31 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id?: string) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, path?: string) => {
     e.preventDefault();
     setIsOpen(false);
 
-    if (router.pathname !== '/') {
-      router.push('/');
-      setTimeout(() => {
-        if (id) {
-          const element = document.getElementById(id);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      if (id) {
-        const element = document.getElementById(id);
+    if (path) {
+      if (router.pathname === '/' || router.pathname === path) {
+        const element = document.getElementById(path.replace('/', ''));
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        router.push(path).then(() => {
+          setTimeout(() => {
+            const element = document.getElementById(path.replace('/', ''));
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
+        });
       }
-    }
-    
-    if (id) {
-      router.push(`/${id}`, undefined, { shallow: true });
     } else {
-      router.push('/', undefined, { shallow: true });
+      if (router.pathname !== '/') {
+        router.push('/');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -48,41 +43,41 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50">
       <div className="navbar w-full bg-custom-color_2 text-white flex items-center justify-end p-5 md:p-7">
         <div className="hidden md:flex space-x-16 absolute left-1/2 transform -translate-x-1/2">
-          <a 
+          <Link 
             href="/" 
             className="hover:text-gray-300 transition duration-300"
             onClick={(e) => handleClick(e)}
           >
             Home
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/about" 
             className="hover:text-gray-300 transition duration-300"
-            onClick={(e) => handleClick(e, 'about')}
+            onClick={(e) => handleClick(e, '/about')}
           >
             About
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/resume" 
             className="hover:text-gray-300 transition duration-300"
-            onClick={(e) => handleClick(e, 'resume')}
+            onClick={(e) => handleClick(e, '/resume')}
           >
             Resume
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/project" 
             className="hover:text-gray-300 transition duration-300"
-            onClick={(e) => handleClick(e, 'project')}
+            onClick={(e) => handleClick(e, '/project')}
           >
             Projects
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/contact" 
             className="hover:text-gray-300 transition duration-300"
-            onClick={(e) => handleClick(e, 'contact')}
+            onClick={(e) => handleClick(e, '/contact')}
           >
             Contact
-          </a>
+          </Link>
         </div>
         <button
           className="md:hidden focus:outline-none text-gray-300 transition duration-300"
@@ -97,37 +92,42 @@ export default function Navbar() {
           isOpen ? 'max-h-64' : 'max-h-0'
         }`}
       >
-        <div className="flex flex-col p-4 space-y-4 text-center">
-          <a href="/"
+        <div className="flex flex-col p-4 space-y-4 text-center bg-custom-color_2 text-white">
+          <Link 
+            href="/"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
             onClick={(e) => handleClick(e)}
           >
             Home
-          </a>
-          <a href="/about"
+          </Link>
+          <Link 
+            href="/about"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
-            onClick={(e) => handleClick(e, 'about')}
+            onClick={(e) => handleClick(e, '/about')}
           >
             About
-          </a>
-          <a href="/resume"
+          </Link>
+          <Link 
+            href="/resume"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
-            onClick={(e) => handleClick(e, 'resume')}
+            onClick={(e) => handleClick(e, '/resume')}
           >
             Resume
-          </a>
-          <a href="/project"
+          </Link>
+          <Link 
+            href="/project"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
-            onClick={(e) => handleClick(e, 'projects')}
+            onClick={(e) => handleClick(e, '/project')}
           >
             Projects
-          </a>
-          <a href="/contact"
+          </Link>
+          <Link 
+            href="/contact"
             className="hover:text-gray-300 transition duration-300 transform hover:translate-x-2"
-            onClick={(e) => handleClick(e, 'contact')}
+            onClick={(e) => handleClick(e, '/contact')}
           >
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

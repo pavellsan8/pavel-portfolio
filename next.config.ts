@@ -6,9 +6,17 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
+        // Handle dynamic routes but exclude pages directory routes
         source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'dynamic',
+            value: 'true'
+          }
+        ],
         destination: '/',
-      },
+      }
     ];
   },
 };

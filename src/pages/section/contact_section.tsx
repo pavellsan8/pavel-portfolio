@@ -54,7 +54,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section id="project" className="bg-custom-color_1 px-6 py-14 md:px-14">
+    <section id="contact" className="bg-custom-color_1 px-6 py-14 md:px-14">
       <div className="p-4 md:p-3">
         <div className="mx-auto">
           <div className="w-full mx-auto">

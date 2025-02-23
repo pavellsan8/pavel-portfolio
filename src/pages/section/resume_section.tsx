@@ -1,6 +1,6 @@
 import React from "react";
 
-import { experiences } from "../../../data/homepage";
+import { experiences } from "../../data/homepage";
 
 export default function ResumeSection() {
   return (

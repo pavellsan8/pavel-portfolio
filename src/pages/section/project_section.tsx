@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
-import ProjectCard from "../../../components/project_card";
-import { projectCard } from "@/data/homepage";
+import ProjectCard from "../../components/project_card";
+import { projectCard } from "../..//data/homepage";
 
 export default function ProjectSection() {
   return (
