@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import ProjectCard from "../../components/project_card";
-import { projectCard } from "../..//data/homepage";
+import { projectCard } from "../../data/data";
 
 export default function ProjectSection() {
   return (
@@ -11,7 +11,7 @@ export default function ProjectSection() {
         <div className="p-4 md:p-3">
           <div className="mx-auto">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl font-bold text-white my-4">Projects</h1>
+              <h1 className="text-3xl font-bold text-white my-4">Project</h1>
               <Link href="/pavel-projects" 
                 className="text-white hover:text-custom-color_5 transition duration-300 animate-blink"
               >

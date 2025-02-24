@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/data/homepage.js", "src/pages/pavel-projects/[id].tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/data/data.js", "src/pages/pavel-projects/[id].tsx"],
   "exclude": ["node_modules"]
 }

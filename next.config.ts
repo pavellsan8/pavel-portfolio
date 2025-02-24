@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        // Handle dynamic routes but exclude pages directory routes
         source: '/:path*',
         has: [
           {

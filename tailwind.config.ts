@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  mode: 'jit',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -26,9 +27,30 @@ export default {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' },
         },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        slideUp: {
+          '0%': { 
+            opacity: '0',
+            transform: 'translateY(20px)'
+          },
+          '100%': { 
+            opacity: '1',
+            transform: 'translateY(0)'
+          },
+        },
       },
       animation: {
         blink: 'blink 1.5s infinite',
+        fadeIn: 'fadeIn 0.5s ease-out forwards',
+        float: 'float 6s infinite ease-in-out',
+        slideUp: 'slideUp 0.5s ease-out forwards',
       },
     },
   },
