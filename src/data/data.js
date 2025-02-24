@@ -93,6 +93,7 @@ export const projectCard = [
       "OpenAI", 
     ],
     date: "February 2024",
+    role: "Backend",
     features: [
       "Responsive design for all devices",
       "Server-side rendering for better performance",
@@ -123,6 +124,7 @@ export const projectCard = [
       "Oracle SQL", 
     ],
     date: "September 2024",
+    role: "Backend",
     features: [
       "Responsive design for all devices",
       "Server-side rendering for better performance",
@@ -153,6 +155,7 @@ export const projectCard = [
       "OpenAI", 
     ],
     date: "February 2024",
+    role: "Backend",
     features: [
       "Responsive design for all devices",
       "Server-side rendering for better performance",
@@ -183,6 +186,7 @@ export const projectCard = [
       "OpenAI", 
     ],
     date: "February 2024",
+    role: "Backend",
     features: [
       "Responsive design for all devices",
       "Server-side rendering for better performance",
@@ -213,6 +217,7 @@ export const projectCard = [
       "OpenAI", 
     ],
     date: "February 2024",
+    role: "Backend",
     features: [
       "Responsive design for all devices",
       "Server-side rendering for better performance",
@@ -243,6 +248,7 @@ export const projectCard = [
       "OpenAI", 
     ],
     date: "February 2024",
+    role: "Backend",
     features: [
       "Responsive design for all devices",
       "Server-side rendering for better performance",

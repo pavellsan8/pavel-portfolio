@@ -1,5 +1,9 @@
+import React from "react";
 import { useState, useEffect } from 'react';
 import { Mail, PhoneIcon, LinkedinIcon, GithubIcon, InstagramIcon } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+
+import { staggerContainer, fadeInUp, slideInFromRight } from "../../data/animation.js";
 
 interface FormData {
   name: string;
@@ -14,6 +18,9 @@ const initialFormData: FormData = {
 };
 
 export default function ContactPage() {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isVisible, setIsVisible] = useState(false);
   
@@ -54,21 +61,37 @@ export default function ContactPage() {
   };
 
   return (
-    <section id="contact" className="bg-custom-color_1 px-6 py-14 md:px-14">
+    <motion.section
+      ref={ref}
+      id="contact"
+      className="bg-custom-color_1 px-6 py-14 md:px-14"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      animate={isInView ? "visible" : "hidden"}
+      variants={staggerContainer}
+    >
       <div className="p-4 md:p-3">
         <div className="mx-auto">
           <div className="w-full mx-auto">
-            <h1 className="text-3xl font-bold text-white my-4">Contact</h1>
-            <div className="h-1 w-16 bg-custom-color_5 mb-6"></div>
-            <p className="text-gray-200 mb-12">
-              Feel free to reach out for discussions on projects, collaborations, or anything tech-related. 
-              I'm always open to exchanging ideas and finding innovative solutions together.
-            </p>
+            <motion.h1 variants={fadeInUp} className="text-3xl font-bold text-white my-4">
+              Contact
+            </motion.h1>
+            <motion.div variants={fadeInUp} className="h-1 w-16 bg-custom-color_5 mb-6" />
+            <motion.p variants={fadeInUp} className="text-gray-200 mb-12">
+              Feel free to reach out for discussions on projects, collaborations, or anything tech-related.
+            </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-12"
+            variants={staggerContainer}
+          >
             {/* Contact Form */}
-            <div className="bg-custom-color_2 p-8 rounded-2xl shadow-lg">
+            <motion.div 
+              variants={slideInFromRight}
+              className="bg-custom-color_2 p-8 rounded-2xl shadow-lg"
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -137,13 +160,19 @@ export default function ContactPage() {
                   </div>
                 )}
               </form>
-            </div>
+            </motion.div>
 
-            <div className="p-8 rounded-2xl bg-custom-color_2 shadow-lg">
+            <motion.div 
+              variants={slideInFromRight}
+              className="p-8 rounded-2xl bg-custom-color_2 shadow-lg"
+            >
               <h2 className="text-2xl font-bold mb-8 text-center text-custom-color_7 bg-clip-text">
                 Connect with Me
               </h2>
-              <div className="space-y-4">
+              <motion.div 
+                className="space-y-4"
+                variants={staggerContainer}
+              >
                 <a 
                   href="mailto:pavel.susanto@gmail.com" 
                   className="group block p-4 rounded-lg bg-custom-color_3 hover:bg-custom-color_4 transition-all duration-300 transform hover:translate-x-2"
@@ -220,11 +249,11 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </a>
-              </div>
-            </div>
-          </div>
+              </motion.div> 
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

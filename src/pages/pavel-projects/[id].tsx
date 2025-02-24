@@ -1,14 +1,17 @@
+import React from 'react';
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Calendar, Tag, ArrowLeftIcon } from "lucide-react";
-import Link from "next/link";
+import { Calendar, User2, ArrowLeftIcon } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
-import {projectCard} from "../../data/data";
+import { projectCard } from '@/data/data';
 
 interface ProjectData {
   id: number;
@@ -17,6 +20,7 @@ interface ProjectData {
   imageSlider: string[];
   technologies: string[];
   date: string;
+  role: string;
   features: string[];
   challenges: string[];
 }
@@ -26,6 +30,7 @@ export default function ProjectDetail() {
   const { id } = router.query;
   const [project, setProject] = useState<ProjectData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [activeSection, setActiveSection] = useState('features');
 
   useEffect(() => {
     if (id) {
@@ -37,18 +42,26 @@ export default function ProjectDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
+        <div className="relative">
+          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="mt-4 text-blue-400 text-center">Loading project...</div>
+        </div>
       </div>
     );
   }
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800">Project Not Found</h1>
-          <Link href="/pavel-projects" className="text-blue-500 hover:text-blue-600 mt-4 inline-block">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
+        <div className="text-center bg-gray-800 p-8 rounded-lg shadow-xl">
+          <h1 className="text-3xl font-bold text-gray-100 mb-4">Project Not Found</h1>
+          <p className="text-gray-400 mb-6">The project you're looking for doesn't exist or has been moved.</p>
+          <Link 
+            href="/pavel-projects" 
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            <ArrowLeftIcon className="w-4 h-4 mr-2" />
             Return to Projects
           </Link>
         </div>
@@ -58,78 +71,143 @@ export default function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-custom-color_1 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="mx-5">
-        <Link href="/pavel-projects" className="inline-flex items-center text-custom-color_7 hover:text-gray-300 mb-8 transition-colors">
-          <ArrowLeftIcon className="w-4 h-4 mr-2" />
+      <div className="mx-auto">
+        <Link 
+          href="/pavel-projects" 
+          className="inline-flex items-center text-custom-color_7 hover:text-white mb-8 transition-colors group"
+        >
+          <ArrowLeftIcon className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
           Back to Projects
         </Link>
 
-        <div className="bg-custom-color_1 shadow-lg overflow-hidden flex flex-col md:flex-row gap-5">
-          <div className="w-full md:w-2/5 relative">
-            <Swiper
-              modules={[Navigation, Pagination]}
-              navigation
-              loop={true}
-              pagination={{ clickable: true }}
-              className="w-full rounded-lg"
-              style={{ height: '500px' }}
-            >
-              {project.imageSlider.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <img 
-                    src={image} 
-                    alt={`Project Image ${index + 1}`} 
-                    className="image-slider w-full h-full object-cover object-top"
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-
-          <div className="w-full md:w-3/5 md:px-6 flex flex-col">
-            <div className="flex items-center justify-between mb-4">
-              <h1 className="text-3xl font-bold text-custom-color_6">{project.title}</h1>
+        <div className="bg-custom-color_2 rounded-xl shadow-2xl overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-2/5">
+              <Swiper
+                modules={[Navigation, Pagination, EffectFade, Autoplay]}
+                effect="fade"
+                navigation
+                loop={true}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{ clickable: true }}
+                className="w-full h-[500px]"
+              >
+                {project.imageSlider.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="relative h-full">
+                      <img 
+                        src={image} 
+                        alt={`${project.title} - View ${index + 1}`} 
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 opacity-100" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-5 mb-6">
-              <div className="flex items-center text-custom-color_7">
-                <Calendar className="w-4 h-4 mr-2 flex-shrink-0" />
-                <span><i>{project.date}</i></span>
-              </div>
-              <div className="flex items-center text-custom-color_7">
-                <Tag className="w-4 h-4 mr-2 flex-shrink-0 mt-1" />
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="bg-custom-color_5 px-2 py-1 rounded-md text-sm">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="prose max-w-none flex-grow">
-              <p className="text-custom-color_7 mb-8">{project.description}</p>
-
-              <div className="flex flex-col md:flex-row justify-between">
-                <div className="flex-col">
-                  <h2 className="text-xl font-semibold text-custom-color_6 mb-4">Key Features</h2>
-                  <ul className="list-disc list-inside space-y-2 mb-8">
-                    {project.features.map((feature, index) => (
-                      <li key={index} className="text-custom-color_7">{feature}</li>
+            <div className="w-full lg:w-3/5 p-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h1 className="text-4xl font-bold text-white mb-4">{project.title}</h1>
+                
+                <div className="flex flex-col md:flex-row gap-4 mb-6">
+                  <div className="flex items-center text-gray-400">
+                    <Calendar className="w-5 h-5 mr-2" />
+                    <span className="italic">{project.date}</span>
+                  </div>
+                  <div className="flex items-center text-gray-400">
+                    <User2 className="w-5 h-5 mr-2" />
+                    <span className="italic">{project.role}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, index) => (
+                      <span 
+                        key={index} 
+                        className="px-3 py-1 bg-custom-color_5 text-white rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                <div className="flex-col">
-                  <h2 className="text-xl font-semibold text-custom-color_6 mb-4">Technical Challenges</h2>
-                  <ul className="list-disc list-inside space-y-2">
-                    {project.challenges.map((challenge, index) => (
-                      <li key={index} className="text-custom-color_7">{challenge}</li>
-                    ))}
-                  </ul>
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  {project.description}
+                </p>
+
+                <div className="space-y-8">
+                  <div>
+                    <div className="flex gap-4 mb-6">
+                      <button
+                        onClick={() => setActiveSection('features')}
+                        className={`px-4 py-2 rounded-lg transition-colors ${
+                          activeSection === 'features' 
+                            ? 'bg-custom-color_5 text-white' 
+                            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                        }`}
+                      >
+                        Key Features
+                      </button>
+                      <button
+                        onClick={() => setActiveSection('challenges')}
+                        className={`px-4 py-2 rounded-lg transition-colors ${
+                          activeSection === 'challenges' 
+                            ? 'bg-custom-color_5 text-white' 
+                            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                        }`}
+                      >
+                        Technical Challenges
+                      </button>
+                    </div>
+
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {activeSection === 'features' ? (
+                        <ul className="space-y-3">
+                          {project.features.map((feature, index) => (
+                            <motion.li
+                              key={index}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.1 }}
+                              className="flex items-start text-gray-300"
+                            >
+                              <div className="w-2 h-2 mt-2 mr-3 bg-custom-color_6 rounded-full" />
+                              {feature}
+                            </motion.li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <ul className="space-y-3">
+                          {project.challenges.map((challenge, index) => (
+                            <motion.li
+                              key={index}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.1 }}
+                              className="flex items-start text-gray-300"
+                            >
+                              <div className="w-2 h-2 mt-2 mr-3 bg-custom-color_6 rounded-full" />
+                              {challenge}
+                            </motion.li>
+                          ))}
+                        </ul>
+                      )}
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
