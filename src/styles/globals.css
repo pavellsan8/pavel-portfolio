@@ -74,6 +74,15 @@ body {
   animation-delay: 0.3s;
 }
 
+@keyframes scrollBackground {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+
 .image-slider {
   height: 40rem;
 }

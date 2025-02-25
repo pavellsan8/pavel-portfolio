@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 
-const ScrollTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [shouldRender, setShouldRender] = useState(false);
+const ScrollTopButton = ({ sectionId = "hero" }) => {
+  const [isVisible, setIsVisible] = useState(sectionId !== "hero");
+  const [shouldRender, setShouldRender] = useState(sectionId !== "hero");
 
   useEffect(() => {
-    const homeSection = document.getElementById("hero");
-    if (!homeSection) return;
+    if (sectionId !== "hero") {
+      setShouldRender(true);
+      setIsVisible(true);
+      return;
+    }
+
+    const targetSection = document.getElementById(sectionId);
+    if (!targetSection) {
+      console.warn(`Section with ID "${sectionId}" not found. Button might not work as expected.`);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -25,12 +34,12 @@ const ScrollTopButton = () => {
       }
     );
 
-    observer.observe(homeSection);
+    observer.observe(targetSection);
 
     return () => {
-      if (homeSection) observer.unobserve(homeSection);
+      if (targetSection) observer.unobserve(targetSection);
     };
-  }, []);
+  }, [sectionId]);
 
   const scrollToTop = () => {
     const baseUrl = `${window.location.origin}`;

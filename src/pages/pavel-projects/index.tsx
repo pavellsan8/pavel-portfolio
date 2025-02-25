@@ -1,14 +1,37 @@
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
 
 import ProjectCard from "../../components/project_card";
+import ScrollTopButton from "../../components/scrolltop_button";
 import { projectCard } from "../../data/data";
+import { staggerContainer } from "../../data/animation";
 
 export default function ProjectPage() {
   return (
-    <section className="bg-custom-color_1 px-6 py-14 md:px-14">
+    <motion.section
+      id="project-list"
+      className="bg-custom-color_1 px-6 py-14 md:px-14"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={staggerContainer}
+    >
       <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-custom-color_4 to-custom-color_6 p-8 mb-12">
         <div className="relative z-10 animate-fadeIn">
+          <Link href="/">
+            <div className="inline-block">
+              <motion.button 
+                className="flex items-center gap-2 bg-custom-color_6/20 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-all mb-6 backdrop-blur-sm border border-white/10 shadow-lg group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                <span className="font-medium">Back to Home</span>
+              </motion.button>
+            </div>
+          </Link>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             My Projects
           </h1>
@@ -32,7 +55,6 @@ export default function ProjectPage() {
           ))}
         </div>
       </div>
-      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectCard.map((project, index) => (
           <div 
@@ -49,14 +71,7 @@ export default function ProjectPage() {
           </div>
         ))}
       </div>
-
-      <div className="mt-12 text-center">
-        <Link href="/">
-          <button className="bg-custom-color_5 hover:bg-custom-color_4 text-white px-6 py-3 rounded-lg shadow-md transition-all">
-            ⬅ Back to Home
-          </button>
-        </Link>
-      </div>
-    </section>
+      <ScrollTopButton sectionId="project-list" />
+    </motion.section>
   );
 }

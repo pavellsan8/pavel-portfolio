@@ -45,12 +45,17 @@ export default {
             transform: 'translateY(0)'
           },
         },
+        scrollBackground: {
+          '0%': { backgroundPosition: 'top' },
+          '100%': { backgroundPosition: 'bottom' }
+        }
       },
       animation: {
         blink: 'blink 1.5s infinite',
         fadeIn: 'fadeIn 0.5s ease-out forwards',
         float: 'float 6s infinite ease-in-out',
         slideUp: 'slideUp 0.5s ease-out forwards',
+        scrollBackground: 'scrollBackground 15s linear infinite alternate',
       },
     },
   },

@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-import { projectCard } from '@/data/data';
+import { projectCard } from '../../data/data';
 
 interface ProjectData {
   id: number;
@@ -97,11 +97,15 @@ export default function ProjectDetail() {
               >
                 {project.imageSlider.map((image, index) => (
                   <SwiperSlide key={index}>
-                    <div className="relative h-full">
-                      <img 
-                        src={image} 
-                        alt={`${project.title} - View ${index + 1}`} 
-                        className="w-full h-full object-cover"
+                    <div className="relative h-full overflow-hidden">
+                      <div 
+                        className="w-full h-full"
+                        style={{
+                          backgroundImage: `url(${image})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'top',
+                          animation: 'scrollBackground 15s linear infinite alternate'
+                        }}
                       />
                       <div className="absolute inset-0 opacity-100" />
                     </div>
