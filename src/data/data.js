@@ -80,6 +80,7 @@ export const projectCard = [
     id: 1,
     title: "Japfa Innovation",
     description: "Japfa Innovation is a content publishing platform designed for employees to document and share innovations developed within the company. The platform allows users to create articles using predefined templates, customize content, and publish innovations for company-wide visibility.",
+    longDescription: "Japfa Innovation is a content publishing platform designed for employees to document and share innovations developed within the company. The platform allows users to create articles using predefined templates, customize content, and publish innovations for company-wide visibility. \n\nThis platform enables employees to submit innovation articles in a structured format, ensuring that ideas are well-documented and easily accessible. Once an article is published, it becomes visible exclusively to all employees within the company, fostering a collaborative environment where team members can exchange ideas and learn from each other's innovations. The primary goal of Japfa Innovation is to encourage knowledge sharing, drive continuous improvement, and showcase the latest innovations that contribute to the company’s growth and efficiency.",
     image: "/images/project/project_1/japfa_inno_1.jpg",
     imageSlider: [
       "/images/project/project_1/japfa_inno_1.jpg",
@@ -112,6 +113,7 @@ export const projectCard = [
     id: 2,
     title: "IMEXS Dashboard",
     description: "IMEXS Dashboard is a real-time production monitoring system that provides a comprehensive view of the entire production process. This dashboard aggregates data from various stages of production, including process orders, stations, and process IDs, enabling better visibility and decision-making.",
+    longDescription: "IMEXS Dashboard is a real-time production monitoring system that provides a comprehensive view of the entire production process. This dashboard aggregates data from various stages of production, including process orders, stations, and process IDs, enabling better visibility and decision-making. The dashboard features interactive graphs and performance reports, allowing users to analyze production trends, track efficiency, and identify potential issues. \n\nIts primary goal is to enhance production efficiency, minimize downtime, and quickly detect anomalies within the manufacturing process. By providing real-time insights, the system helps production teams and management make informed decisions and take proactive measures to improve overall operational performance. IMEXS Dashboard is accessible to all personnel in the production department as well as management, ensuring that critical production data is available to those who need it. This broad accessibility fosters better collaboration between teams and enables a more responsive approach to optimizing production workflows.",
     image: "/images/project/project_2/mes_report_1.jpg",
     imageSlider: [
       "/images/project/project_2/mes_report_1.jpg",
@@ -144,6 +146,7 @@ export const projectCard = [
     id: 3,
     title: "SleepEz",
     description: "SleepEz is a web-based application designed to help users improve their sleep quality through a combination of relaxation techniques and informative content. The platform provides features such as calming music, guided sleep videos, and curated articles containing tips and tricks for better sleep.",
+    longDescription: "SleepEz is a web-based application designed to help users improve their sleep quality through a combination of relaxation techniques and informative content. The platform provides features such as calming music, guided sleep videos, and curated articles containing tips and tricks for better sleep. \nThe primary goal of SleepEz is to promote relaxation and assist users in overcoming sleep-related issues such as insomnia, restless sleep, or difficulty falling asleep. By offering scientifically backed relaxation methods, the platform helps users establish healthier sleep routines and improve overall well-being. \n\nWith a user-friendly interface, SleepEz ensures that individuals can easily access soothing soundscapes, meditation guides, and expert advice tailored to their needs. Whether users seek a peaceful environment for winding down or structured guidance for better sleep hygiene, the platform provides personalized solutions to enhance sleep quality effectively.",
     image: "/images/project/project_3/sleep_ez_1.jpg",
     imageSlider: [
       "/images/project/project_3/sleep_ez_1.jpg",

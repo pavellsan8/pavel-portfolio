@@ -16,7 +16,7 @@ import { projectCard } from '../../data/data';
 interface ProjectData {
   id: number;
   title: string;
-  description: string;
+  longDescription: string;
   imageSlider: string[];
   technologies: string[];
   date: string;
@@ -79,7 +79,6 @@ export default function ProjectDetail() {
           <ArrowLeftIcon className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
           Back to Projects
         </Link>
-
         <div className="bg-custom-color_2 rounded-xl shadow-2xl overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-2/5">
@@ -93,7 +92,7 @@ export default function ProjectDetail() {
                   disableOnInteraction: false,
                 }}
                 pagination={{ clickable: true }}
-                className="w-full h-[500px]"
+                className="w-full h-[700px]"
               >
                 {project.imageSlider.map((image, index) => (
                   <SwiperSlide key={index}>
@@ -113,7 +112,6 @@ export default function ProjectDetail() {
                 ))}
               </Swiper>
             </div>
-
             <div className="w-full lg:w-3/5 p-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -121,7 +119,6 @@ export default function ProjectDetail() {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl font-bold text-white mb-4">{project.title}</h1>
-                
                 <div className="flex flex-col md:flex-row gap-4 mb-6">
                   <div className="flex items-center text-gray-400">
                     <Calendar className="w-5 h-5 mr-2" />
@@ -142,11 +139,9 @@ export default function ProjectDetail() {
                     ))}
                   </div>
                 </div>
-
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  {project.description}
+                <p className="text-gray-300 leading-relaxed mb-8 whitespace-pre-line">
+                  {project.longDescription}
                 </p>
-
                 <div className="space-y-8">
                   <div>
                     <div className="flex gap-4 mb-6">
@@ -171,7 +166,6 @@ export default function ProjectDetail() {
                         Technical Challenges
                       </button>
                     </div>
-
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}

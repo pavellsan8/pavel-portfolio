@@ -32,7 +32,6 @@ export default function SkillSection() {
           <motion.p variants={fadeInUp} className="text-gray-300 mb-8">
             Specialized in modern technologies and development practices, I am equipped with the skills to build scalable, efficient, and user-centric applications.
           </motion.p>
-
           <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8" variants={staggerContainer}>
             {hardSkills.map((skill, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -51,7 +50,6 @@ export default function SkillSection() {
               </motion.div>
             ))}
           </motion.div>
-
           <motion.div 
             className="flex flex-wrap justify-between mt-10 mb-8 md:mt-16 md:mb-10 gap-8"
             variants={staggerContainer}

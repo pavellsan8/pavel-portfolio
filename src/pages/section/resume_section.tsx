@@ -29,7 +29,6 @@ export default function ResumeSection() {
             <motion.p variants={fadeInUp} className="text-gray-200 mb-12">
               Innovative and deadline-driven Developer with 2+ years of experience in creating and implementing mobile and web applications.
             </motion.p>
-            
             <motion.div 
               className="grid md:grid-cols-12 gap-8"
               variants={staggerContainer}

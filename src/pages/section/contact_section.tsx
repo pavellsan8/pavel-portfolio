@@ -82,7 +82,6 @@ export default function ContactPage() {
               Feel free to reach out for discussions on projects, collaborations, or anything tech-related.
             </motion.p>
           </div>
-
           <motion.div 
             className="grid md:grid-cols-2 gap-12"
             variants={staggerContainer}
@@ -108,7 +107,6 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
                     Email
@@ -124,7 +122,6 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
                     Message
@@ -140,14 +137,12 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-
                 <button
                   type="submit"
                   className="w-full bg-custom-color_5 text-white py-3 rounded-lg hover:bg-custom-color_4 transition duration-300"
                 >
                   Send Message
                 </button>
-
                 {status.type && (
                   <div
                     className={`mt-4 p-4 rounded-lg transition-all duration-300 ease-in-out transform ${
@@ -161,7 +156,6 @@ export default function ContactPage() {
                 )}
               </form>
             </motion.div>
-
             <motion.div 
               variants={slideInFromRight}
               className="p-8 rounded-2xl bg-custom-color_2 shadow-lg"
