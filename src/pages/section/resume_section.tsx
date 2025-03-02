@@ -59,7 +59,7 @@ export default function ResumeSection() {
                             <p className="italic">{detail.company}</p>
                             <ul className="mt-3 space-y-2 list-disc list-inside text-gray-400">
                               {detail.responsibilities.map((responsibility, resIdx) => (
-                                <li>{responsibility}</li>
+                                <li key={resIdx}>{responsibility}</li>
                               ))}
                             </ul>
                           </div>

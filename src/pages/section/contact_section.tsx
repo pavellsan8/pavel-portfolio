@@ -2,18 +2,24 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { Mail, PhoneIcon, LinkedinIcon, GithubIcon, InstagramIcon } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
 
+import { app } from ".././../utils/firebase";
 import { staggerContainer, fadeInUp, slideInFromRight } from "../../data/animation.js";
 
 interface FormData {
   name: string;
   email: string;
+  subject: string;
   message: string;
 }
 
 const initialFormData: FormData = {
   name: '',
   email: '',
+  subject: '',
   message: ''
 };
 
@@ -22,34 +28,44 @@ export default function ContactPage() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [isVisible, setIsVisible] = useState(false);
-  
-  const [status, setStatus] = useState<{
-    type: 'success' | 'error' | null;
-    message: string;
-  }>({
-    type: null,
-    message: ''
-  });
-  useEffect(() => {
-    if (status.type) {
-      setIsVisible(true);
-      const timer = setTimeout(() => {
-        setIsVisible(false);
-        setTimeout(() => {
-          setStatus({ type: null, message: '' });
-        }, 300);
-      }, 3000);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-      return () => clearTimeout(timer);
-    }
-  }, [status]);
+  const db = getFirestore(app);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus({ type: 'success', message: 'Message sent successfully!' });
-    console.log('Form submitted:', formData);
-    setFormData(initialFormData);
+    if (isSubmitting) return;
+    
+    try {
+      setIsSubmitting(true);
+      await addDoc(collection(db, "contact"), {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      });
+      
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      
+      setFormData(initialFormData);
+      
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error("Failed to send message. Please try again.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -123,6 +139,21 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
+                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                    Subject
+                  </label>
+                  <input
+                    type="subject"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 bg-custom-color_3 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-color_5"
+                    placeholder='Enter your subject message'
+                    required
+                  />
+                </div>
+                <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
                     Message
                   </label>
@@ -143,17 +174,6 @@ export default function ContactPage() {
                 >
                   Send Message
                 </button>
-                {status.type && (
-                  <div
-                    className={`mt-4 p-4 rounded-lg transition-all duration-300 ease-in-out transform ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
-                    } ${
-                      status.type === 'success' ? 'bg-green-600' : 'bg-red-600'
-                    }`}
-                  >
-                    {status.message}
-                  </div>
-                )}
               </form>
             </motion.div>
             <motion.div 
