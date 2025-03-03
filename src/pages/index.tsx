@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from "next/head";
 
 import Navbar from "../components/navigation_bar";
 import Footer from "../components/footer";
@@ -30,6 +31,11 @@ export default function App() {
 
   return (
     <>
+      <Head>
+        <title>Pavel's Portfolio</title>
+        <meta name="description" content="Welcome to my portfolio!" />
+      </Head>
+
       <Navbar />
       <HeroSection />
       <AboutSection />

@@ -1,12 +1,12 @@
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Mail, PhoneIcon, LinkedinIcon, GithubIcon, InstagramIcon } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-import { app } from ".././../utils/firebase";
+import { db } from ".././../utils/firebase";
 import { staggerContainer, fadeInUp, slideInFromRight } from "../../data/animation.js";
 
 interface FormData {
@@ -30,8 +30,6 @@ export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const db = getFirestore(app);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
@@ -42,7 +40,8 @@ export default function ContactPage() {
         name: formData.name,
         email: formData.email,
         subject: formData.subject,
-        message: formData.message
+        message: formData.message,
+        created_at: serverTimestamp(),
       });
       
       toast.success("Message sent successfully!", {
