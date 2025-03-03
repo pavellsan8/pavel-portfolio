@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-import { db } from ".././../utils/firebase";
+import { db } from "../../config/firebase/firebase";
 import { staggerContainer, fadeInUp, slideInFromRight } from "../../data/animation.js";
 
 interface FormData {
