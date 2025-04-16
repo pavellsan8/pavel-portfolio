@@ -27,12 +27,20 @@ export default function ResumeSection() {
               variants={fadeInUp}
               className="flex items-center bg-custom-color_5 hover:bg-custom-color_4 text-white font-medium p-3 rounded-lg transition-colors duration-300"
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/resume.pdf';
-                link.download = 'Pavel Ryan Susanto_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                fetch('/resume.pdf')
+                  .then(response => response.blob())
+                  .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'Pavel Ryan Susanto_Resume.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    if (link.parentNode) {
+                      link.parentNode.removeChild(link);
+                    }
+                    window.URL.revokeObjectURL(url);
+                  });
               }}
             >
               <svg 
