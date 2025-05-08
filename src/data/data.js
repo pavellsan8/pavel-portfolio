@@ -93,7 +93,7 @@ export const projectCard = [
       "PostgreSQL",
       "OpenAI", 
     ],
-    date: "Under Development",
+    date: "Febuary 2025 - Present",
     role: "Frontend & Backend",
     features: [
       "Book Reading - Access a curated collection of books to relax and unwind.",
@@ -125,7 +125,7 @@ export const projectCard = [
       "PostgreSQL",
       "OpenAI", 
     ],
-    date: "February 2024",
+    date: "February 2024 - August 2024",
     role: "Frontend & Backend",
     features: [
       "Upload Data or Fill Out Forms - Uploading data or filling out project forms to be converted into articles.",
@@ -157,7 +157,7 @@ export const projectCard = [
       "Tailwind CSS",
       "Oracle SQL", 
     ],
-    date: "September 2024",
+    date: "September 2024 - February 2025",
     role: "Backend",
     features: [
       "Process Monitoring - Track the status of process orders, stations, and process IDs in real-time.",
@@ -188,7 +188,7 @@ export const projectCard = [
       "Bootstrap",
       "Spotify API",
     ],
-    date: "February 2024",
+    date: "September 2023 - December 2023",
     role: "Frontend & Backend",
     features: [
       "Engaging Sleep Content - Provides tips & tricks, soothing music, and relaxing videos to improve sleep quality.",
