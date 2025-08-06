@@ -88,22 +88,26 @@ export default function ResumeSection() {
                       custom={index}
                     >
                       <h2 className="text-2xl font-semibold mb-4">{experience.section}</h2>
-                      {experience.details.map((detail, idx) => (
-                        <div
-                          className="relative pl-6 border-l-2 border-blue-500 space-y-4"
-                          key={idx}
-                        >
-                          <div className="absolute -left-[11px] w-5 h-5 bg-white border-2 border-blue-500 rounded-full"></div>
-                          <h3 className="font-bold">{detail.title}</h3>
-                          <p className="text-gray-500">{detail.duration}</p>
-                          <p className="italic">{detail.company}</p>
-                          <ul className="mt-3 space-y-2 list-disc list-inside text-gray-400">
-                            {detail.responsibilities.map((responsibility, resIdx) => (
-                              <li key={resIdx}>{responsibility}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                      <div className="relative border-l-2 border-blue-500 pl-6">
+                        {experience.details.map((detail, idx) => (
+                          <div
+                            className="relative pb-8 last:pb-0"
+                            key={idx}
+                          >
+                            <div className="absolute -left-8 top-0 w-4 h-4 bg-white border-2 border-blue-500 rounded-full"></div>
+                            <div className="space-y-2">
+                              <h3 className="font-bold">{detail.title}</h3>
+                              <p className="text-gray-500">{detail.duration}</p>
+                              <p className="italic">{detail.company}</p>
+                              <ul className="mt-3 space-y-2 list-disc list-inside text-gray-400">
+                                {detail.responsibilities.map((responsibility, resIdx) => (
+                                  <li key={resIdx}>{responsibility}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </motion.div>
                   ))}
                 </motion.div>

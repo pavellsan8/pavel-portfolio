@@ -2,7 +2,7 @@ import React from "react";
 import { Star, Languages, Briefcase } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 
-import { hardSkills, softSkills, projects } from "../../data/data";
+import { hardSkills, softSkills, projectCard } from "../../data/data";
 import { staggerContainer, fadeInUp, slideInFromLeft } from "../../data/animation.js";
 
 export default function SkillSection() {
@@ -86,10 +86,14 @@ export default function SkillSection() {
                 Featured Projects
               </h2>
               <div className="space-y-3">
-                {projects.map((project, index) => (
+                {projectCard.slice(0, 2).map((project, index) => (
                   <div key={index} className="space-y-1">
                     <h3 className="font-semibold">{project.title}</h3>
-                    <p className="text-sm text-gray-300">{project.description}</p>
+                    <p className="text-sm text-gray-300">
+                      {Array.isArray(project.technologies)
+                        ? project.technologies.join(", ")
+                        : project.technologies}
+                    </p>
                   </div>
                 ))}
               </div>

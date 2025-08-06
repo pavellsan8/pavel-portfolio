@@ -30,17 +30,6 @@ export const softSkills = [
   },
 ]
 
-export const projects = [
-  { 
-    title: "Japfa Innovation", 
-    description: "Django, Bootstrap, PostgreSQL, OpenAI" 
-  },
-  { 
-    title: "IMEXS Dashboard", 
-    description: "Django, Tailwind CSS, Flask, Oracle SQL" 
-  },
-]
-
 export const experiences = [
   {
     section : "Education",
@@ -52,6 +41,8 @@ export const experiences = [
         responsibilities: [
           "Focusing on Mobile Application development on modern development practices",
           "Optimize application performance and implement best practices in mobile development",
+          "Participated in various projects, including mobile applications and web development, using technologies such as Flutter, React, Django, and Flask.",
+          "Gained hands-on experience in software development, project management, and teamwork through academic projects and internships.",
         ],
       },
     ]
@@ -60,16 +51,26 @@ export const experiences = [
     section : "Professional Experience",
     details : [
       {
-        title: "APPLICATION DEVELOPER INTERN",
+        title: "APPLICATION DEVELOPER (FREELANCE)",
+        duration: "2025 - Present",
+        company: "Codingo Assignments Pte Ltd.",
+        responsibilities: [
+          "Focused on completing tasks assigned by clients, predominantly involving coding and software development.",
+          "Worked with technologies specified by the client or proposed and implemented the most suitable solutions depending on the project.",
+          "Aimed to deliver high-quality code efficiently and within the agreed timelines.",
+        ],
+      },
+      {
+        title: "APPLICATION DEVELOPER (INTERN)",
         duration: "2024 - 2025",
         company: "PT. Japfa Comfeed Indonesia, Tbk",
         responsibilities: [
-          "Collaborate with UI/UX designers to implement responsive and intuitive interfaces",
-          "Enhanced features in the 'Japfa Innovation' web application for production readiness",
-          "Implemented new features in Admin and updated the interface in the JLTC application",
-          "Optimize application performance and implement best practices in IMEXS Dashboard",
-          "Manage backend integration and implement RESTful APIs in IMEXS application",
-        ],  
+          "Implemented responsive, accessible, and high-performance user interfaces in collaboration with UI/UX designers.",
+          "Participated in daily scrum meetings to monitor progress, resolve blockers, and align team goals.",
+          "Developed and optimized Django/PostgreSQL backends, completing features and ensuring production readiness.",
+          "Built RESTful APIs with Flask and Oracle Database for seamless integration and performance between platforms.",
+          "Improved admin features in Flask/PostgreSQL apps, adding messaging integration and multilingual accessibility.",
+        ],
       },
     ]
   },
@@ -79,7 +80,7 @@ export const projectCard = [
   {
     id: 1,
     title: "Serene",
-    description: "Serene is a comprehensive mental health mobile application designed to assist users  maintaining their mental well-being. It offers engaging book reading experiences, soothing calming music, guided relaxation videos, and interactive chatbot consultations.",
+    description: "Serene is a comprehensive mental health mobile application designed to assist users  maintaining their mental well-being. It offers engaging book reading experiences, soothing calming music, guided relaxation videos, and interactive chatbot consultations for the users.",
     longDescription: "Serene is a mental health mobile application designed to support users in maintaining and improving their mental well-being. The app offers a variety of features, including access to a curated collection of relaxing books, calming music tailored for relaxation, guided videos for meditation and stress relief, and an AI-powered chatbot consultation for personalized advice and guidance.\n\nWith a user-friendly interface, Serene makes it easy for users to find solutions tailored to their needs, whether to manage stress, improve sleep quality, or simply create moments of calm in their daily lives. The application is designed to be a reliable companion on the journey toward better mental health and overall well-being.",    
     image: "/images/project/serene/serene_2.jpg",
     imageSlider: [
@@ -93,7 +94,7 @@ export const projectCard = [
       "PostgreSQL",
       "OpenAI", 
     ],
-    date: "Febuary 2025 - Present",
+    date: "Febuary 2025 - July 2025",
     role: "Frontend & Backend",
     features: [
       "Book Reading - Access a curated collection of books to relax and unwind.",
