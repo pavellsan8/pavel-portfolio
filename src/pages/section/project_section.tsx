@@ -43,7 +43,7 @@ export default function ProjectSection() {
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               variants={staggerContainer}
             >
-              {projectCard.slice(0, 3).map((project, index) => (
+              {[...projectCard].slice(-3).reverse().map((project, index) => (
                 <motion.div
                   key={project.id}
                   variants={fadeInUp}

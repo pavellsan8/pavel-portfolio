@@ -86,7 +86,7 @@ export default function SkillSection() {
                 Featured Projects
               </h2>
               <div className="space-y-3">
-                {projectCard.slice(0, 2).map((project, index) => (
+                {projectCard.slice(-2).reverse().map((project, index) => (
                   <div key={index} className="space-y-1">
                     <h3 className="font-semibold">{project.title}</h3>
                     <p className="text-sm text-gray-300">

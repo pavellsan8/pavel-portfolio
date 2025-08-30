@@ -67,7 +67,7 @@ export default function ResumeSection() {
           </motion.h1>
           <motion.div variants={fadeInUp} className="h-1 w-16 bg-custom-color_5 mb-6" />
           <motion.p variants={fadeInUp} className="text-gray-200 mb-12">
-            Innovative and deadline-driven Developer with 2+ years of experience in creating and implementing mobile and web applications.
+            Innovative and deadline-driven Developer with 1+ years of experience in creating and implementing mobile and web applications.
           </motion.p>
           <motion.div 
             className="grid md:grid-cols-12 gap-8"

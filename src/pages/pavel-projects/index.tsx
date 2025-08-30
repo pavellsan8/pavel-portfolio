@@ -63,7 +63,7 @@ export default function ProjectPage() {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projectCard.map((project, index) => (
+          {[...projectCard].reverse().map((project, index) => (
             <div 
               key={project.id} 
               className="animate-slideUp"
