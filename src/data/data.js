@@ -205,4 +205,33 @@ export const projectCard = [
       "Real-Time Sync - Ensuring instant updates and smooth synchronization of content, music, and videos."
     ],    
   },
+  {
+    id: 5,
+    title: "Dashboard Sales Analytics",
+    description: "Dashboard Sales Analytics is a powerful tool designed to help businesses not only track and analyze their sales performance, but also gain deeper insights into sales trends, customer behavior, and overall business health, enabling data-driven decisions and more effective strategies for growth.",
+    longDescription: "Dashboard Sales Analytics is a comprehensive solution for businesses seeking to gain a deeper understanding of their sales operations. This tool enables organizations to monitor sales performance in real time, visualize key metrics, and identify emerging trends that impact business growth. \n\nWith customizable dashboards, users can track sales data across different periods, regions, or product categories, allowing for granular analysis and informed decision-making. The platform offers advanced analytics features such as trend forecasting, customer segmentation, and conversion tracking, empowering businesses to optimize their sales strategies and improve overall efficiency. \n\nThis helps businesses identify high-value customers, uncover new opportunities, and address potential challenges proactively. The intuitive interface ensures that both technical and non-technical users can easily navigate the system, generate reports, and share insights with stakeholders.",
+    image: "/images/project/dashboard/dashboard_1.png",
+    imageSlider: [
+      "/images/project/dashboard/dashboard_1.png",
+    ],
+    technologies: [
+      "React",
+      "Express.js",
+      "MySQL", 
+    ],
+    date: "July 2025",
+    role: "Frontend & Backend",
+    features: [
+      "Interactive filters for time, region, and category.",
+      "KPI overview with sales, customers, orders, and AOV.",
+      "Charts for geographic analysis, segmentation, product performance, and trends.",
+      "Searchable, paginated transaction table."
+    ],
+    challenges: [
+      "Efficient data aggregation and API performance.",
+      "Managing dynamic filters and frontend state.",
+      "Integrating and updating interactive charts.",
+      "Implementing server-side pagination and search."
+    ],    
+  },
 ];

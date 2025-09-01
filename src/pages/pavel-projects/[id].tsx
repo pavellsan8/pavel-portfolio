@@ -118,7 +118,7 @@ export default function ProjectDetail() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="text-4xl font-bold text-white mb-4">{project.title}</h1>
+                <h1 className="text-4xl font-bold text-white mb-5">{project.title}</h1>
                 <div className="flex flex-col md:flex-row gap-4 mb-6">
                   <div className="flex items-center text-gray-400">
                     <Calendar className="w-5 h-5 mr-2" />
