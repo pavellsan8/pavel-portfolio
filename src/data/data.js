@@ -108,6 +108,7 @@ export const projectCard = [
       "Content Streaming Optimization - Ensuring seamless audio and video playback with minimal buffering.",
       "Cross-Platform Compatibility –-Maintaining a consistent experience across mobile and web versions.",
     ],
+    githubUrl: "https://github.com/pavellsan8/SleepEz_Project",
   },
   {
     id: 2,
@@ -140,6 +141,7 @@ export const projectCard = [
       "Handling Large Datasets - Optimizing queries and processing for scalability.",
       "Real-Time Data Synchronization – Keeping displayed information up to date without excessive API calls.",
     ],
+    githubUrl: "none",
   },
   {
     id: 3,
@@ -172,6 +174,7 @@ export const projectCard = [
       "Real-Time Content Processing - Generating and previewing articles instantly.",
       "Integration with AI Features (OpenAI) - Handling AI-powered translation text suggestions effectively.",
     ],
+    githubUrl: "none",
   },
   {
     id: 4,
@@ -203,7 +206,8 @@ export const projectCard = [
       "Consistent User Experience - Ensuring a seamless and intuitive interface across all features and devices.",
       "Personalization & AI - Delivering tailored content and integrating AI-powered consultations effectively.",
       "Real-Time Sync - Ensuring instant updates and smooth synchronization of content, music, and videos."
-    ],    
+    ],
+    githubUrl: "https://github.com/pavellsan8/serene_app_ui/tree/main",
   },
   {
     id: 5,
@@ -222,16 +226,16 @@ export const projectCard = [
     date: "July 2025",
     role: "Frontend & Backend",
     features: [
-      "Interactive filters for time, region, and category.",
-      "KPI overview with sales, customers, orders, and AOV.",
-      "Charts for geographic analysis, segmentation, product performance, and trends.",
-      "Searchable, paginated transaction table."
+      "Interactive Filters – Allow users to filter sales data by time period, region, and category with advanced options.",
+      "KPI Overview – Show total sales, customers, orders, and average order value with growth comparisons.",
+      "Visual Analytics – Provide charts for geographic analysis, customer segmentation, product performance, and sales trends.",
+      "Detailed Data Table – Present searchable and paginated transaction details including order info and status."
     ],
     challenges: [
-      "Efficient data aggregation and API performance.",
-      "Managing dynamic filters and frontend state.",
-      "Integrating and updating interactive charts.",
-      "Implementing server-side pagination and search."
-    ],    
+      "Efficient Data Aggregation – Processing large volumes of sales data on the backend without slowing performance.",
+      "Complex State Management – Keeping React states consistent when multiple filters and views are applied.",
+      "Chart Integration – Implementing interactive charts that update dynamically based on user input."
+    ],
+    githubUrl: "https://github.com/pavellsan8/dashboard_analytics",
   },
 ];
