@@ -33,10 +33,10 @@ export default function AboutSection() {
             className="text-gray-300 leading-relaxed"
             variants={fadeInUp}
           > 
-            As a dedicated professional in web and mobile application development, I excel in designing and building solutions that prioritize functionality, 
-            performance, and user satisfaction. With a passion for the end-to-end development process, I thrive on conceptualizing ideas, writing clean code, 
-            and deploying polished products. My commitment to excellence ensures the highest standards of usability, scalability, and innovation in every 
-            project I undertake.
+            As a Fullstack Developer, I enjoy building and improving applications that provide both reliable functionality and a seamless user experience. 
+            I focus on ensuring that frontend implementations align well with business needs, data flows, and expected UI behavior, while also handling backend 
+            processes with strong problem-solving and critical thinking approaches. I am passionate about develop ing scalable and maintainable solutions, 
+            continuously learning, and delivering impactful results through efficient and thoughtful development practices.
           </motion.p>
           <div className="flex flex-wrap items-center justify-between mt-6">
             <motion.div 
@@ -62,7 +62,7 @@ export default function AboutSection() {
                 className="text-2xl font-semibold mb-4 text-custom-color_6"
                 variants={fadeInUp}
               >
-                Web Developer and Mobile Application Developer 
+                Application Developer
               </motion.h2>
               <motion.ul 
                 className="space-y-4"
@@ -82,8 +82,8 @@ export default function AboutSection() {
               >
                 {[
                   { Icon: MapPin, value: "West Jakarta, Indonesia" },
-                  { Icon: User, value: "20 Years Old" },
-                  { Icon: GraduationCap, value: "Undergraduate Mobile Application and Technology @ BINUS University" },
+                  { Icon: User, value: "21 Years Old" },
+                  { Icon: GraduationCap, value: "Graduated in Mobile Application and Technology from BINUS University" },
                   { Icon: Lightbulb, value: <i>"Every bug teaches a lesson. The key is to learn faster than you fail."</i> }
                 ].map((item, index) => (
                   <motion.div

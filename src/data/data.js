@@ -55,8 +55,19 @@ export const experiences = [
     section : "Professional Experience",
     details : [
       {
+        title: "FULLSTACK DEVELOPER (CONTRACT)",
+        duration: "November 2025 - Present",
+        company: "PT. Japfa Comfeed Indonesia, Tbk",
+        responsibilities: [
+          "Supported and developed enhancements for the Capcomm application, focusing on financial business requirements and system improvements.",
+          "Participated in data replication initiatives from Global Digital Products applications to Snowflake to support centralized analytics and reporting.",
+          "Contributed to the development and enhancement of warehouse management systems to improve operational efficiency and system reliability.",
+          "Developed a Freelance Management System to streamline freelancer administration, project tracking, and operational workflows.",
+        ],
+      },
+      {
         title: "APPLICATION DEVELOPER (FREELANCE)",
-        duration: "2025 - Present",
+        duration: "March 2025 - November 2025",
         company: "Codingo Assignments Pte Ltd.",
         responsibilities: [
           "Focused on completing tasks assigned by clients, predominantly involving coding and software development.",
@@ -66,7 +77,7 @@ export const experiences = [
       },
       {
         title: "APPLICATION DEVELOPER (INTERN)",
-        duration: "2024 - 2025",
+        duration: "February 2024 - February 2025",
         company: "PT. Japfa Comfeed Indonesia, Tbk",
         responsibilities: [
           "Implemented responsive, accessible, and high-performance user interfaces in collaboration with UI/UX designers.",

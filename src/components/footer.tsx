@@ -4,7 +4,7 @@ export default function Footer() {
         <div className="container px-5 md:px-20 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           <div className="text-center md:text-left">
             <p className="text-sm text-gray-400 mt-1">
-              &copy; {new Date().getFullYear()} Pavellsan All rights reserved.
+              &copy; {new Date().getFullYear()} Pavellsann All rights reserved.
             </p>
           </div>
         </div>
